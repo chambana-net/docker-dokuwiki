@@ -10,7 +10,7 @@ RUN echo "dokuwiki dokuwiki/system/writeplugins boolean true" >> preseed.txt
 RUN debconf-set-selections preseed.txt
 
 RUN apt-get -qq update && \
-	apt-get install -y --no-install-recommends php-cgi php-apcu dokuwiki/testing && \
+	apt-get install -y --no-install-recommends php5-cgi php5-apcu dokuwiki/testing && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
