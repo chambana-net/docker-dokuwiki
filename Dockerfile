@@ -22,6 +22,4 @@ EXPOSE 80
 
 VOLUME ["/var/lib/dokuwiki", "/etc/dokuwiki"]
 
-USER www-data
-
-CMD ["uwsgi --ini /etc/uwsgi/apps-available/dokuwiki.conf"]
+CMD ["uwsgi", "--uid", "www-data", "--gid", "www-data", "--ini", "/etc/uwsgi/apps-available/dokuwiki.conf"]
