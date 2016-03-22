@@ -13,6 +13,9 @@ RUN apt-get -qq update && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
+# Package installation doesn't always seem to set correct perms on plugins directory
+RUN chmod -R www-data:www-data /var/lib/dokuwiki/lib/plugins
+
 ADD dokuwiki.conf /etc/uwsgi/apps-available/dokuwiki.conf
 
 EXPOSE 80
