@@ -9,7 +9,7 @@ RUN echo "dokuwiki dokuwiki/wiki/password password dokuwiki" | debconf-set-selec
 	echo "dokuwiki dokuwiki/system/writeplugins boolean true" | debconf-set-selections
 
 RUN apt-get -qq update && \
-	apt-get install -y --no-install-recommends php5-cgi php5-apcu dokuwiki/testing && \
+	apt-get install -y --no-install-recommends php5-cgi php5-apcu php5-cli php5-gd php5-ldap wget dokuwiki/testing && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
 
