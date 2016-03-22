@@ -14,7 +14,7 @@ RUN apt-get -qq update && \
 	rm -rf /var/lib/apt/lists/*
 
 # Package installation doesn't always seem to set correct perms on plugins directory
-RUN chown -R www-data:www-data /var/lib/dokuwiki/lib/plugins
+RUN chown -R www-data:www-data /var/lib/dokuwiki/lib/plugins /var/lib/dokuwiki/lib/tpl
 
 ADD dokuwiki.conf /etc/uwsgi/apps-available/dokuwiki.conf
 
